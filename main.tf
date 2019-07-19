@@ -16,10 +16,7 @@ resource "aws_cloudwatch_log_stream" "this" {
 
 data "aws_iam_policy_document" "this" {
   statement {
-    actions = [
-      "logs:DescribeLogGroups",
-      "logs:DescribeLogStreams",
-    ]
+    actions = ["logs:DescribeLogGroups","logs:DescribeLogStreams"]
 
     resources = ["*"]
   }
@@ -35,9 +32,7 @@ data "aws_iam_policy_document" "this" {
   }
 
   statement {
-    actions = [
-      "${var.additional_permissions}",
-    ]
+    actions = "${var.additional_permissions}"
 
     resources = [
       "${aws_cloudwatch_log_group.this.arn}",
