@@ -14,7 +14,7 @@ variable "streams" {
 }
 
 variable "tags" {
-  type        = "map"
+  type        = map
   default     = {}
   description = "Additional tags (e.g. map('BusinessUnit`,`XYZ`)"
 }
@@ -25,7 +25,7 @@ variable "additional_permissions" {
     "logs:DeleteLogStream",
   ]
 
-  type        = "list"
+  type        = list
   description = "Additional permissions granted to assumed role"
 }
 
